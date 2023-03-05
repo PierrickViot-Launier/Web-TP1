@@ -3,7 +3,7 @@ import React, { useState } from "react";
 export default function NewProfessor({ addProfessor }) {
   const [nom, setNom] = useState("");
 
-  const cours = ["PHP", "Java"];
+  const cours = [];
 
   function nameHandler(event) {
     setNom(event.target.value);
@@ -17,7 +17,13 @@ export default function NewProfessor({ addProfessor }) {
       cours,
     };
 
-    addProfessor(newProfessor);
+    if (nom) {
+      addProfessor(newProfessor);
+    } else {
+      alert("Veuillez saisir le nom du professeur");
+    }
+
+    setNom("");
   }
 
   return (

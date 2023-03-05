@@ -3,11 +3,11 @@ import React from "react";
 export default function ProfessorItem({ nom, listeCours }) {
   return (
     <div>
-      <h1>{nom}</h1>
+      <h2>{nom}</h2>
 
       <ul>
         {listeCours.map((cours) => (
-          <li>{cours}</li>
+          <li key={cours}>{cours}</li>
         ))}
       </ul>
     </div>

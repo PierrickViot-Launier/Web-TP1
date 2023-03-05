@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import NewCourse from "./NewCourse";
 import NewProfessor from "./NewProfessor";
 import ProfessorItem from "./ProfessorItem";
 
@@ -9,7 +10,7 @@ export default function ProfessorsList() {
       cours: ["Web", "React", "HTML"],
     },
     {
-      nom: "Sylvain Labranche",
+      nom: "Pierce Walker",
       cours: ["Mobile", "React native", "JavaScript"],
     },
   ]);
@@ -20,16 +21,51 @@ export default function ProfessorsList() {
     });
   }
 
+  function addCourse(professeur, cours) {
+    const index = professors.indexOf(professeur);
+
+    const tempProf = professeur;
+
+    tempProf.cours = [...professeur.cours, cours];
+
+    const filteredProfessors = professors.filter(
+      (professor, profIndex) => profIndex !== index
+    );
+
+    const updatedProfessors = [...filteredProfessors, tempProf];
+
+    setProfessors(updatedProfessors);
+  }
+
+  function orderedProfessors() {
+    return professors.sort((a, b) => {
+      const nameA = a.nom.toUpperCase();
+      const nameB = b.nom.toUpperCase();
+
+      if (nameA < nameB) {
+        return -1;
+      }
+
+      if (nameA > nameB) {
+        return 1;
+      }
+
+      return 0;
+    });
+  }
+
   return (
     <React.Fragment>
       <NewProfessor addProfessor={addProfessor} />
 
-      <div>
-        <h1>Liste des profs</h1>
-      </div>
+      <h1>Liste des profs</h1>
 
-      {professors.map((professor) => (
-        <ProfessorItem nom={professor.nom} listeCours={professor.cours} />
+      {orderedProfessors().map((professor) => (
+        <React.Fragment key={professor.nom}>
+          <ProfessorItem nom={professor.nom} listeCours={professor.cours} />
+
+          <NewCourse addCourse={(cours) => addCourse(professor, cours)} />
+        </React.Fragment>
       ))}
     </React.Fragment>
   );
