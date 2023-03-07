@@ -6,12 +6,18 @@ import ProfessorItem from "./ProfessorItem";
 export default function ProfessorsList() {
   const [professors, setProfessors] = useState([
     {
-      nom: "Sylvain Labranche",
+      nom: "Labranche",
+      prenom: "Sylvain",
+      dateEmbauche: "2023-01-01",
       cours: ["Web", "React", "HTML"],
+      photo: "",
     },
     {
-      nom: "Pierce Walker",
+      nom: "Walker",
+      prenom: "Pierce",
+      dateEmbauche: "2023-01-01",
       cours: ["Mobile", "React native", "JavaScript"],
+      photo: "",
     },
   ]);
 
@@ -58,11 +64,17 @@ export default function ProfessorsList() {
     <React.Fragment>
       <NewProfessor addProfessor={addProfessor} />
 
-      <h1>Liste des profs</h1>
+      <h2>Liste des profs</h2>
 
       {orderedProfessors().map((professor) => (
         <React.Fragment key={professor.nom}>
-          <ProfessorItem nom={professor.nom} listeCours={professor.cours} />
+          <ProfessorItem
+            nom={professor.nom}
+            prenom={professor.prenom}
+            dateEmbauche={professor.dateEmbauche}
+            listeCours={professor.cours}
+            photo={professor.photo}
+          />
 
           <NewCourse addCourse={(cours) => addCourse(professor, cours)} />
         </React.Fragment>

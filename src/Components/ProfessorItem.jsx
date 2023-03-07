@@ -1,9 +1,19 @@
 import React from "react";
 
-export default function ProfessorItem({ nom, listeCours }) {
+export default function ProfessorItem({
+  nom,
+  prenom,
+  dateEmbauche,
+  listeCours,
+  photo,
+}) {
   return (
     <div>
-      <h2>{nom}</h2>
+      <h3>
+        {nom}, {prenom}
+      </h3>
+
+      <p>Date d'embauche: {dateEmbauche}</p>
 
       <ul>
         {listeCours.map((cours) => (
