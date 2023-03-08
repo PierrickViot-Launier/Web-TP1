@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import CourseItem from "./CourseItem";
+import FormulaireCours from "./FormulaireCours";
 
 export default function CoursesList() {
   const navigate = useNavigate();
@@ -33,11 +34,36 @@ export default function CoursesList() {
   ]);
 
   const [coursH23, setCoursH23] = useState([
-    { nom: "Web et bases de données" },
-    { nom: "Environnement graphique" },
-    { nom: "Objets connectés" },
-    { nom: "Contexte professionnel" },
-    { nom: "Analyse et conception de modèle" },
+    {
+      nom: "Web et bases de données",
+      discipline: "Informatique",
+      dateDebut: "2023-01-01",
+      dateFin: "2023-06-06",
+    },
+    {
+      nom: "Environnement graphique",
+      discipline: "Informatique",
+      dateDebut: "2023-01-01",
+      dateFin: "2023-06-06",
+    },
+    {
+      nom: "Objets connectés",
+      discipline: "Informatique",
+      dateDebut: "2023-01-01",
+      dateFin: "2023-06-06",
+    },
+    {
+      nom: "Contexte professionnel",
+      discipline: "Informatique",
+      dateDebut: "2023-01-01",
+      dateFin: "2023-06-06",
+    },
+    {
+      nom: "Analyse et conception de modèle",
+      discipline: "Informatique",
+      dateDebut: "2023-01-01",
+      dateFin: "2023-06-06",
+    },
   ]);
 
   function sessionHandler(event) {
@@ -112,20 +138,30 @@ export default function CoursesList() {
 
       case "Hiver 2023":
         return (
-          <ul>
-            {orderedSession(coursH23).map((cours) => (
-              <CourseItem
-                key={cours.nom}
-                nom={cours.nom}
-                onClick={() => navigateToDetails(cours)}
-              />
-            ))}
-          </ul>
+          <React.Fragment>
+            <FormulaireCours addCourse={addCourse} />
+
+            <ul>
+              {orderedSession(coursH23).map((cours) => (
+                <CourseItem
+                  key={cours.nom}
+                  nom={cours.nom}
+                  onClick={() => navigateToDetails(cours)}
+                />
+              ))}
+            </ul>
+          </React.Fragment>
         );
 
       default:
         return null;
     }
+  }
+
+  function addCourse(newCourse) {
+    setCoursH23((prevCourses) => {
+      return prevCourses.concat(newCourse);
+    });
   }
 
   return (
