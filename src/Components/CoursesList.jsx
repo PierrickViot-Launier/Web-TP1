@@ -10,28 +10,28 @@ export default function CoursesList() {
 
   const [session, setSession] = useState("");
 
-  const [coursA21, setCoursA21] = useState([
+  const coursA21 = [
     { nom: "Algorithmie et programmation" },
     { nom: "Arithmétique et logique" },
     { nom: "Outils et profession" },
     { nom: "Système d'exploitation Windows" },
-  ]);
+  ];
 
-  const [coursH22, setCoursH22] = useState([
+  const coursH22 = [
     { nom: "Environnements virtuels et réseau local" },
     { nom: "Géométrie et statistiques" },
     { nom: "Programmation orientée objet" },
     { nom: "Programmation structurée" },
     { nom: "Système d'exploitation Linux" },
-  ]);
+  ];
 
-  const [coursA22, setCoursA22] = useState([
+  const coursA22 = [
     { nom: "Base de données" },
     { nom: "Sécurité et éthique" },
     { nom: "Structures de données" },
     { nom: "Interface web" },
     { nom: "Interface utilisateur" },
-  ]);
+  ];
 
   const [coursH23, setCoursH23] = useState([
     {
