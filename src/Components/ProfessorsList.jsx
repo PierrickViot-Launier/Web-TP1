@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import NewCourse from "./NewCourse";
 import NewProfessor from "./NewProfessor";
 import ProfessorItem from "./ProfessorItem";
 
@@ -27,21 +26,21 @@ export default function ProfessorsList() {
     });
   }
 
-  function addCourse(professeur, cours) {
-    const index = professors.indexOf(professeur);
+  // function addCourse(professeur, cours) {
+  //   const index = professors.indexOf(professeur);
 
-    const tempProf = professeur;
+  //   const tempProf = professeur;
 
-    tempProf.cours = [...professeur.cours, cours];
+  //   tempProf.cours = [...professeur.cours, cours];
 
-    const filteredProfessors = professors.filter(
-      (professor, profIndex) => profIndex !== index
-    );
+  //   const filteredProfessors = professors.filter(
+  //     (professor, profIndex) => profIndex !== index
+  //   );
 
-    const updatedProfessors = [...filteredProfessors, tempProf];
+  //   const updatedProfessors = [...filteredProfessors, tempProf];
 
-    setProfessors(updatedProfessors);
-  }
+  //   setProfessors(updatedProfessors);
+  // }
 
   function orderedProfessors() {
     return professors.sort((a, b) => {
@@ -75,8 +74,6 @@ export default function ProfessorsList() {
             listeCours={professor.cours}
             photo={professor.photo}
           />
-
-          {/* <NewCourse addCourse={(cours) => addCourse(professor, cours)} /> */}
         </React.Fragment>
       ))}
     </React.Fragment>
