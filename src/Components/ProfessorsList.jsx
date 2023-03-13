@@ -76,7 +76,7 @@ export default function ProfessorsList() {
             photo={professor.photo}
           />
 
-          <NewCourse addCourse={(cours) => addCourse(professor, cours)} />
+          {/* <NewCourse addCourse={(cours) => addCourse(professor, cours)} /> */}
         </React.Fragment>
       ))}
     </React.Fragment>
