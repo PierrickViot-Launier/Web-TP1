@@ -88,7 +88,7 @@ export default function CoursesList() {
   }
 
   function navigateToDetails(cours) {
-    navigate("/CourseDetails", {
+    navigate(`/CourseDetails/${cours.nom}`, {
       state: {
         cours: cours,
       },

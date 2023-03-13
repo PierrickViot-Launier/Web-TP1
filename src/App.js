@@ -17,7 +17,7 @@ function App() {
 
           <Route path="/Courses" element={<CoursesScreen />} />
 
-          <Route path="/CourseDetails" element={<CourseDetails />} />
+          <Route path="/CourseDetails/:nom" element={<CourseDetails />} />
         </Routes>
       </main>
     </Router>
