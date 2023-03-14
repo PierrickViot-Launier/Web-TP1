@@ -13,14 +13,14 @@ function App() {
       prenom: "Sylvain",
       dateEmbauche: "2023-01-01",
       cours: ["Web et bases de données"],
-      photo: "",
+      photo: "male_teacher.png",
     },
     {
       nom: "Bergeron",
       prenom: "Mathieu",
       dateEmbauche: "2023-01-01",
       cours: ["Environnement graphique"],
-      photo: "",
+      photo: "male_teacher.png",
     },
   ]);
 

@@ -1,6 +1,7 @@
 import React from "react";
 import ProfessorItem from "../Components/ProfessorItem";
 import NewProfessor from "../Components/NewProfessor";
+import "./ProfessorsScreen.css";
 
 export default function ProfessorsScreen({ addProfessor, professors }) {
   function orderedProfessors() {
@@ -21,13 +22,13 @@ export default function ProfessorsScreen({ addProfessor, professors }) {
   }
 
   return (
-    <React.Fragment>
+    <div className="body">
       <NewProfessor addProfessor={addProfessor} />
 
       <h2>Liste des profs</h2>
 
       {orderedProfessors().map((professor) => (
-        <React.Fragment key={professor.nom}>
+        <div className="item" key={professor.nom}>
           <ProfessorItem
             nom={professor.nom}
             prenom={professor.prenom}
@@ -35,8 +36,8 @@ export default function ProfessorsScreen({ addProfessor, professors }) {
             listeCours={professor.cours}
             photo={professor.photo}
           />
-        </React.Fragment>
+        </div>
       ))}
-    </React.Fragment>
+    </div>
   );
 }

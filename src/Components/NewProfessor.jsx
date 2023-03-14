@@ -7,6 +7,8 @@ export default function NewProfessor({ addProfessor }) {
 
   const [dateEmbauche, setDateEmbauche] = useState("");
 
+  const [photo, setPhoto] = useState("");
+
   const cours = [];
 
   function nameHandler(event) {
@@ -15,6 +17,10 @@ export default function NewProfessor({ addProfessor }) {
 
   function surnameHandler(event) {
     setPrenom(event.target.value);
+  }
+
+  function photoHandler(event) {
+    setPhoto(event.target.value);
   }
 
   function dateHandler(event) {
@@ -29,14 +35,17 @@ export default function NewProfessor({ addProfessor }) {
       cours,
       prenom,
       dateEmbauche,
+      photo,
     };
 
-    if (nom && prenom && dateEmbauche) {
+    if (nom && prenom && dateEmbauche && photo) {
       addProfessor(newProfessor);
 
       setNom("");
 
       setPrenom("");
+
+      setPhoto("");
 
       setDateEmbauche("");
     } else if (!nom) {
@@ -45,6 +54,8 @@ export default function NewProfessor({ addProfessor }) {
       alert("Veuillez saisir le prenom du professeur");
     } else if (!dateEmbauche) {
       alert("Veuillez saisir la date d'embauche");
+    } else if (!photo) {
+      alert("Veuillez choisir une photo");
     }
   }
 
@@ -63,6 +74,18 @@ export default function NewProfessor({ addProfessor }) {
 
         <div>
           <input type="text" onChange={surnameHandler} value={prenom} />
+        </div>
+
+        <label htmlFor="photo">Photo</label>
+
+        <div>
+          <select id="photo" value={photo} onChange={photoHandler}>
+            <option value="">--Veuillez choisir une photo--</option>
+
+            <option value="male_teacher.png">Homme</option>
+
+            <option value="female-teacher.png">Femme</option>
+          </select>
         </div>
 
         <label>Date d'embauche</label>
