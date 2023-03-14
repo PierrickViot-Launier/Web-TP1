@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function FormulaireProfesseur({
   professors,
@@ -8,6 +9,8 @@ export default function FormulaireProfesseur({
   nomCours,
 }) {
   const [selectedOption, setSelectedOption] = useState(orderedProfessors()[0]);
+
+  const navigate = useNavigate();
 
   function professorHandler(event) {
     setSelectedOption(JSON.parse(event.target.value));
@@ -44,6 +47,10 @@ export default function FormulaireProfesseur({
     addCourseToProfessor(newProf, nomCours);
 
     addProfessorToCourse(newCours);
+
+    alert("Cours modifié avec succès");
+
+    navigate("/Courses");
   }
 
   function orderedProfessors() {

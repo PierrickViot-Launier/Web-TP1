@@ -1,20 +1,22 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
+import "./NavLinks.css";
+
 export default function NavLinks() {
   return (
-    <nav>
-      <div>
+    <ul className="navLinks">
+      <li>
         <NavLink to={"/"}>Page Principale</NavLink>
-      </div>
+      </li>
 
-      <div>
+      <li>
         <NavLink to={"/Professors"}>Professeurs</NavLink>
-      </div>
+      </li>
 
-      <div>
+      <li>
         <NavLink to={"/Courses"}>Cours</NavLink>
-      </div>
-    </nav>
+      </li>
+    </ul>
   );
 }

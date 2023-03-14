@@ -1,15 +1,41 @@
-import React from "react";
+import React, { useState } from "react";
 import MainHeader from "./MainHeader";
 import NavLinks from "./NavLinks";
+import "./MainNavigation.css";
+import SideDrawer from "../Components/SideDrawer";
+import Backdrop from "../Components/Backdrop";
 
 export default function MainNavigation() {
-  return (
-    <MainHeader className="navHeader">
-      <div className="navLinks">
-        {/* <h1>Navigation</h1> */}
+  const [tiroirOuvert, setTiroirOuvert] = useState(false);
 
-        <NavLinks />
-      </div>
-    </MainHeader>
+  const ouvrirTiroir = () => {
+    setTiroirOuvert(true);
+  };
+
+  const fermerTiroir = () => {
+    setTiroirOuvert(false);
+  };
+
+  return (
+    <React.Fragment>
+      {tiroirOuvert && <Backdrop onClick={fermerTiroir} />}
+      <SideDrawer show={tiroirOuvert} onClick={fermerTiroir}>
+        <nav className="mainNavDrawer">
+          <NavLinks />
+        </nav>
+      </SideDrawer>
+
+      <MainHeader>
+        <button className="mainNavButton" onClick={ouvrirTiroir}>
+          <span />
+          <span />
+          <span />
+        </button>
+
+        <nav className="mainNavHeader">
+          <NavLinks />
+        </nav>
+      </MainHeader>
+    </React.Fragment>
   );
 }
