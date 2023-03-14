@@ -3,33 +3,16 @@ import { useNavigate } from "react-router-dom";
 import CourseItem from "../Components/CourseItem";
 import FormulaireCours from "../Components/FormulaireCours";
 
-export default function CoursesScreen({ addCourse, coursH23 }) {
+export default function CoursesScreen({
+  addCourse,
+  coursA21,
+  coursH22,
+  coursA22,
+  coursH23,
+}) {
   const navigate = useNavigate();
 
   const [session, setSession] = useState("");
-
-  const coursA21 = [
-    { nom: "Algorithmie et programmation" },
-    { nom: "Arithmétique et logique" },
-    { nom: "Outils et profession" },
-    { nom: "Système d'exploitation Windows" },
-  ];
-
-  const coursH22 = [
-    { nom: "Environnements virtuels et réseau local" },
-    { nom: "Géométrie et statistiques" },
-    { nom: "Programmation orientée objet" },
-    { nom: "Programmation structurée" },
-    { nom: "Système d'exploitation Linux" },
-  ];
-
-  const coursA22 = [
-    { nom: "Base de données" },
-    { nom: "Sécurité et éthique" },
-    { nom: "Structures de données" },
-    { nom: "Interface web" },
-    { nom: "Interface utilisateur" },
-  ];
 
   function sessionHandler(event) {
     setSession(event.target.value);
@@ -123,20 +106,14 @@ export default function CoursesScreen({ addCourse, coursH23 }) {
     }
   }
 
-  // function addCourse(newCourse) {
-  //   setCoursH23((prevCourses) => {
-  //     return prevCourses.concat(newCourse);
-  //   });
-  // }
-
   return (
     <React.Fragment>
       <div>
-        <label htmlFor="combo-box">Choisissez une session:</label>
+        <label htmlFor="session">Choisissez une session:</label>
       </div>
 
       <div>
-        <select id="combo-box" value={session} onChange={sessionHandler}>
+        <select id="session" value={session} onChange={sessionHandler}>
           <option value="">--Veuillez choisir une session--</option>
 
           <option value="Automne 2021">Automne 2021</option>

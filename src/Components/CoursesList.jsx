@@ -88,11 +88,14 @@ export default function CoursesList() {
   }
 
   function navigateToDetails(cours) {
-    navigate(`/CourseDetails/${cours.nom}`, {
-      state: {
-        cours: cours,
-      },
-    });
+    navigate(
+      `/CourseDetails/${cours.nom}/details?nom=${cours.nom}&discipline=${cours.discipline}&dateDebut=${cours.dateDebut}&dateFin=${cours.dateFin}&nomProfesseur=${cours.nomProfesseur}&prenomProfesseur=${cours.prenomProfesseur}`,
+      {
+        state: {
+          cours: cours,
+        },
+      }
+    );
   }
 
   function sessionSwitch() {
