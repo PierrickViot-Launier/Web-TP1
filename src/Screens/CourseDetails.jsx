@@ -90,9 +90,9 @@ export default function CourseDetails({
 
       <h4>Liste des élèves:</h4>
       {listeEleves.map((eleve) => (
-        <div key={eleve.DA}>
+        <p className="eleve" key={eleve.DA}>
           {eleve.prenom} {eleve.nom} {eleve.DA}
-        </div>
+        </p>
       ))}
 
       {!coursAutresSessions.includes(nom) && (

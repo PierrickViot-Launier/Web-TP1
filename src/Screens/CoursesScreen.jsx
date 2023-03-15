@@ -16,7 +16,7 @@ export default function CoursesScreen({
 
   const [session, setSession] = useState("Hiver 2023");
 
-  let nbPlaces = 31;
+  let nbPlaces = 30;
 
   function sessionHandler(event) {
     setSession(event.target.value);
@@ -56,7 +56,7 @@ export default function CoursesScreen({
               <div className="cours" key={cours.nom}>
                 <CourseItem
                   nom={cours.nom}
-                  discipline={cours.discipline}
+                  placesDispo={nbPlaces - cours.eleves.length}
                   onClick={() => navigateToDetails(cours)}
                 />
               </div>
@@ -71,7 +71,7 @@ export default function CoursesScreen({
               <div className="cours" key={cours.nom}>
                 <CourseItem
                   nom={cours.nom}
-                  discipline={cours.discipline}
+                  placesDispo={nbPlaces - cours.eleves.length}
                   onClick={() => navigateToDetails(cours)}
                 />
               </div>
@@ -86,7 +86,7 @@ export default function CoursesScreen({
               <div className="cours" key={cours.nom}>
                 <CourseItem
                   nom={cours.nom}
-                  discipline={cours.discipline}
+                  placesDispo={nbPlaces - cours.eleves.length}
                   onClick={() => navigateToDetails(cours)}
                 />
               </div>
@@ -102,7 +102,6 @@ export default function CoursesScreen({
                 <div className="cours" key={cours.nom}>
                   <CourseItem
                     nom={cours.nom}
-                    discipline={cours.discipline}
                     placesDispo={nbPlaces - cours.eleves.length}
                     onClick={() => navigateToDetails(cours)}
                   />

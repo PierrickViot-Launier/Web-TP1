@@ -40,7 +40,7 @@ function App() {
     },
     {
       nom: "Arithmétique et logique",
-      discipline: "Informatique",
+      discipline: "Mathématique",
       eleves: [{ nom: "Labrèche", prenom: "Marc", DA: "20175061" }],
       nomProfesseur: "Leboeuf",
       prenomProfesseur: "Marcel",
