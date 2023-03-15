@@ -55,6 +55,27 @@ export default function IntroScreen() {
     <div className="intro-body">
       <img alt="Logo Montmorency" src={logo} />
 
+      <h1>Fonctionnalités du site</h1>
+
+      <ul className="gras">
+        <li>Voir la liste des professeurs</li>
+
+        <li>Créer de nouveux professeurs</li>
+
+        <li>Assigner un professeur à un cours</li>
+
+        <li>
+          Voir la liste des cours de la session présente et des sessions
+          antérieures
+        </li>
+
+        <li>Créer de nouveaux cours pour la session présente</li>
+
+        <li>Voir les étudiants inscrits à un cours</li>
+
+        <li>Ajouter des étudiants à un cours</li>
+      </ul>
+
       <h1>Histoire</h1>
 
       <p>
@@ -110,7 +131,7 @@ export default function IntroScreen() {
       </p>
 
       {impro.map((impro) => (
-        <p className="impro">{impro}</p>
+        <p className="gras">{impro}</p>
       ))}
     </div>
   );
