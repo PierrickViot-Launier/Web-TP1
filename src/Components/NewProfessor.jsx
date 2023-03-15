@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import "./NewProfessor.css";
+
 export default function NewProfessor({ addProfessor }) {
   const [nom, setNom] = useState("");
 
@@ -60,10 +62,10 @@ export default function NewProfessor({ addProfessor }) {
   }
 
   return (
-    <React.Fragment>
+    <div>
       <h1>Ajouter un professeur</h1>
 
-      <form onSubmit={addTeacher}>
+      <form className="formNewProfessor" onSubmit={addTeacher}>
         <label>Nom</label>
 
         <div>
@@ -98,6 +100,6 @@ export default function NewProfessor({ addProfessor }) {
           <button type="submit">Ajouter</button>
         </div>
       </form>
-    </React.Fragment>
+    </div>
   );
 }

@@ -71,7 +71,7 @@ export default function FormulaireProfesseur({
   }
 
   return (
-    <React.Fragment>
+    <div>
       <h3>Ajouter un professeur</h3>
 
       <form onSubmit={addProfessor}>
@@ -95,6 +95,6 @@ export default function FormulaireProfesseur({
           <button type="submit">Ajouter</button>
         </div>
       </form>
-    </React.Fragment>
+    </div>
   );
 }

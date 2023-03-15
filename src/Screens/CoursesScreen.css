@@ -1,0 +1,28 @@
+.combo-box {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.formulaire {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cours-liste {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: stretch;
+}
+
+.cours {
+  margin-top: 15px;
+  margin-right: 15px;
+  width: 200px;
+  /* display: flex; */
+  /* max-height: 100; */
+}

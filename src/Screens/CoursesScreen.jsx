@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import CourseItem from "../Components/CourseItem";
 import FormulaireCours from "../Components/FormulaireCours";
 
+import "./CoursesScreen.css";
+
 export default function CoursesScreen({
   addCourse,
   coursA21,
@@ -12,7 +14,7 @@ export default function CoursesScreen({
 }) {
   const navigate = useNavigate();
 
-  const [session, setSession] = useState("");
+  const [session, setSession] = useState("Hiver 2023");
 
   function sessionHandler(event) {
     setSession(event.target.value);
@@ -47,58 +49,68 @@ export default function CoursesScreen({
     switch (session) {
       case "Automne 2021":
         return (
-          <ul>
+          <div className="cours-liste">
             {orderedSession(coursA21).map((cours) => (
-              <CourseItem
-                key={cours.nom}
-                nom={cours.nom}
-                onClick={() => navigateToDetails(cours)}
-              />
+              <div className="cours" key={cours.nom}>
+                <CourseItem
+                  nom={cours.nom}
+                  discipline={cours.discipline}
+                  onClick={() => navigateToDetails(cours)}
+                />
+              </div>
             ))}
-          </ul>
+          </div>
         );
 
       case "Hiver 2022":
         return (
-          <ul>
+          <div className="cours-liste">
             {orderedSession(coursH22).map((cours) => (
-              <CourseItem
-                key={cours.nom}
-                nom={cours.nom}
-                onClick={() => navigateToDetails(cours)}
-              />
+              <div className="cours" key={cours.nom}>
+                <CourseItem
+                  nom={cours.nom}
+                  discipline={cours.discipline}
+                  onClick={() => navigateToDetails(cours)}
+                />
+              </div>
             ))}
-          </ul>
+          </div>
         );
 
       case "Automne 2022":
         return (
-          <ul>
+          <div className="cours-liste">
             {orderedSession(coursA22).map((cours) => (
-              <CourseItem
-                key={cours.nom}
-                nom={cours.nom}
-                onClick={() => navigateToDetails(cours)}
-              />
+              <div className="cours" key={cours.nom}>
+                <CourseItem
+                  nom={cours.nom}
+                  discipline={cours.discipline}
+                  onClick={() => navigateToDetails(cours)}
+                />
+              </div>
             ))}
-          </ul>
+          </div>
         );
 
       case "Hiver 2023":
         return (
-          <React.Fragment>
-            <FormulaireCours addCourse={addCourse} />
-
-            <ul>
+          <div>
+            <div className="cours-liste">
               {orderedSession(coursH23).map((cours) => (
-                <CourseItem
-                  key={cours.nom}
-                  nom={cours.nom}
-                  onClick={() => navigateToDetails(cours)}
-                />
+                <div className="cours" key={cours.nom}>
+                  <CourseItem
+                    nom={cours.nom}
+                    discipline={cours.discipline}
+                    onClick={() => navigateToDetails(cours)}
+                  />
+                </div>
               ))}
-            </ul>
-          </React.Fragment>
+            </div>
+
+            <div className="formulaire">
+              <FormulaireCours addCourse={addCourse} />
+            </div>
+          </div>
         );
 
       default:
@@ -107,15 +119,13 @@ export default function CoursesScreen({
   }
 
   return (
-    <React.Fragment>
-      <div>
-        <label htmlFor="session">Choisissez une session:</label>
-      </div>
+    <div>
+      <div className="combo-box">
+        <div>
+          <h2 htmlFor="session">Choisissez une session:</h2>
+        </div>
 
-      <div>
         <select id="session" value={session} onChange={sessionHandler}>
-          <option value="">--Veuillez choisir une session--</option>
-
           <option value="Automne 2021">Automne 2021</option>
 
           <option value="Hiver 2022">Hiver 2022</option>
@@ -126,7 +136,7 @@ export default function CoursesScreen({
         </select>
       </div>
 
-      {sessionSwitch()}
-    </React.Fragment>
+      <div>{sessionSwitch()}</div>
+    </div>
   );
 }

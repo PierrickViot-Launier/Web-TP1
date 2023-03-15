@@ -3,7 +3,6 @@ import {
   Card,
   CardHeader,
   Avatar,
-  Box,
   CardContent,
   Typography,
 } from "@mui/material";
@@ -37,7 +36,7 @@ export default function ProfessorItem({
           <Avatar
             alt="teacher"
             src={picture()}
-            sx={{ width: 56, height: 56 }}
+            sx={{ width: 65, height: 65 }}
           />
         }
         title={`${nom}, ${prenom}`}
@@ -57,10 +56,8 @@ export default function ProfessorItem({
   );
 
   return (
-    <Box sx={{ minWidth: 275 }}>
-      <Card className="card" variant="outlined">
-        {card}
-      </Card>
-    </Box>
+    <Card style={{ backgroundColor: "#29cfd5" }} variant="outlined">
+      {card}
+    </Card>
   );
 }

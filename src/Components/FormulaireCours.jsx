@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import "./FormulaireCours.css";
+
 export default function FormulaireCours({ addCourse }) {
   const [nom, setNom] = useState("");
 
@@ -60,7 +62,7 @@ export default function FormulaireCours({ addCourse }) {
     <React.Fragment>
       <h2>Ajouter un cours</h2>
 
-      <form onSubmit={newCourse}>
+      <form className="formCours" onSubmit={newCourse}>
         <label>Nom</label>
 
         <div>
@@ -76,13 +78,25 @@ export default function FormulaireCours({ addCourse }) {
         <label>Date de début</label>
 
         <div>
-          <input type="date" onChange={dateDebutHandler} value={dateDebut} />
+          <input
+            type="date"
+            onChange={dateDebutHandler}
+            value={dateDebut}
+            min="2023-01-01"
+            max="2023-06-01"
+          />
         </div>
 
         <label>Date de fin</label>
 
         <div>
-          <input type="date" onChange={dateFinHandler} value={dateFin} />
+          <input
+            type="date"
+            onChange={dateFinHandler}
+            value={dateFin}
+            min="2023-01-01"
+            max="2023-06-01"
+          />
         </div>
 
         <div>
