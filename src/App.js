@@ -64,6 +64,7 @@ function App() {
       dateFin: "2023-06-06",
       nomProfesseur: "Labranche",
       prenomProfesseur: "Sylvain",
+      eleves: [{ nom: "Labrèche", prenom: "Marc", DA: "20175061" }],
     },
     {
       nom: "Environnement graphique",
@@ -72,6 +73,7 @@ function App() {
       dateFin: "2023-06-06",
       nomProfesseur: "Bergeron",
       prenomProfesseur: "Mathieu",
+      eleves: [{ nom: "Labrèche", prenom: "Marc", DA: "20175061" }],
     },
     {
       nom: "Objets connectés",
@@ -80,6 +82,7 @@ function App() {
       dateFin: "2023-06-06",
       nomProfesseur: "",
       prenomProfesseur: "",
+      eleves: [{ nom: "Labrèche", prenom: "Marc", DA: "20175061" }],
     },
     {
       nom: "Contexte professionnel",
@@ -88,6 +91,7 @@ function App() {
       dateFin: "2023-06-06",
       nomProfesseur: "",
       prenomProfesseur: "",
+      eleves: [{ nom: "Labrèche", prenom: "Marc", DA: "20175061" }],
     },
     {
       nom: "Analyse et conception de modèle",
@@ -96,6 +100,7 @@ function App() {
       dateFin: "2023-06-06",
       nomProfesseur: "",
       prenomProfesseur: "",
+      eleves: [{ nom: "Labrèche", prenom: "Marc", DA: "20175061" }],
     },
   ]);
 
@@ -145,6 +150,41 @@ function App() {
     setCoursH23(updatedCourses);
   }
 
+  function addStudent(cours, eleve) {
+    let indexCours;
+    let indexEleve;
+
+    let dejaPresent = false;
+
+    coursH23.map((coursItem, coursIndex) => {
+      if (coursItem.nom === cours.nom) {
+        indexCours = coursIndex;
+      }
+    });
+
+    const filteredCourses = coursH23.filter(
+      (course, courseIndex) => courseIndex !== indexCours
+    );
+
+    cours.eleves.map((eleveItem, eleveIndex) => {
+      if (eleveItem.DA === eleve.DA) {
+        dejaPresent = true;
+      }
+    });
+
+    if (dejaPresent) {
+      alert("Cet élève est déjà dans le cours");
+    } else {
+      cours.eleves = [...cours.eleves, eleve];
+
+      const updatedCourses = [...filteredCourses, cours];
+
+      console.log(updatedCourses);
+
+      setCoursH23(updatedCourses);
+    }
+  }
+
   return (
     <Router>
       <MainNavigation />
@@ -182,6 +222,7 @@ function App() {
                 professors={professors}
                 addCourseToProfessor={addCourseToProfessor}
                 addProfessorToCourse={addProfessorToCourse}
+                addStudent={addStudent}
                 coursH23={coursH23}
               />
             }

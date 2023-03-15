@@ -101,6 +101,7 @@ export default function CoursesScreen({
                   <CourseItem
                     nom={cours.nom}
                     discipline={cours.discipline}
+                    listeEleves={cours.eleves}
                     onClick={() => navigateToDetails(cours)}
                   />
                 </div>

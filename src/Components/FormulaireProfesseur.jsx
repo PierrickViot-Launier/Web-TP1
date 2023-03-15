@@ -32,6 +32,7 @@ export default function FormulaireProfesseur({
       discipline: coursH23[index].discipline,
       dateDebut: coursH23[index].dateDebut,
       dateFin: coursH23[index].dateFin,
+      eleves: coursH23[index].eleves,
       nomProfesseur: selectedOption.nom,
       prenomProfesseur: selectedOption.prenom,
     };
@@ -48,9 +49,11 @@ export default function FormulaireProfesseur({
 
     addProfessorToCourse(newCours);
 
-    alert("Cours modifié avec succès");
-
-    navigate("/Courses");
+    navigate(`/CourseDetails/${newCours.nom}`, {
+      state: {
+        cours: newCours,
+      },
+    });
   }
 
   function orderedProfessors() {

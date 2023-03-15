@@ -14,7 +14,7 @@ import "./CourseItem.css";
 
 import logo from "../Assets/Images/CollegeMontmorency_Logo.png";
 
-export default function CourseItem({ nom, discipline, onClick }) {
+export default function CourseItem({ nom, discipline, onClick, listeEleves }) {
   const card = (
     <div>
       <CardMedia component={"img"} image={logo} title="Logo Montmorency" />

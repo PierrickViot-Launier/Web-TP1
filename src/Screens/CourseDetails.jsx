@@ -1,11 +1,13 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useLocation } from "react-router-dom";
 import FormulaireProfesseur from "../Components/FormulaireProfesseur";
+import FormulaireStudent from "../Components/FormulaireStudent";
 
 export default function CourseDetails({
   professors,
   addCourseToProfessor,
   addProfessorToCourse,
+  addStudent,
   coursH23,
 }) {
   const location = useLocation();
@@ -16,6 +18,7 @@ export default function CourseDetails({
   const dateFin = location.state.cours.dateFin;
   let nomProfesseur = location.state.cours.nomProfesseur;
   let prenomProfesseur = location.state.cours.prenomProfesseur;
+  let listeEleves = location.state.cours.eleves;
 
   const coursAutresSessions = [
     "Algorithmie et programmation",
@@ -33,8 +36,6 @@ export default function CourseDetails({
     "Interface web",
     "Interface utilisateur",
   ];
-
-  useEffect(() => {}, [location.state.cours]);
 
   return (
     <React.Fragment>
@@ -67,6 +68,18 @@ export default function CourseDetails({
           )}
         </React.Fragment>
       )}
+
+      <p>Liste des élèves:</p>
+      {listeEleves.map((eleve) => (
+        <div key={eleve.DA}>
+          {eleve.prenom} {eleve.nom} {eleve.DA}
+        </div>
+      ))}
+      <FormulaireStudent
+        nomCours={nom}
+        coursH23={coursH23}
+        addStudent={addStudent}
+      />
     </React.Fragment>
   );
 }
