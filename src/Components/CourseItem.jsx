@@ -14,7 +14,9 @@ import "./CourseItem.css";
 
 import logo from "../Assets/Images/CollegeMontmorency_Logo.png";
 
-export default function CourseItem({ nom, discipline, onClick, listeEleves }) {
+export default function CourseItem({ nom, discipline, onClick, placesDispo }) {
+  console.log(placesDispo);
+
   const card = (
     <div>
       <CardMedia component={"img"} image={logo} title="Logo Montmorency" />
@@ -22,8 +24,8 @@ export default function CourseItem({ nom, discipline, onClick, listeEleves }) {
       <CardContent style={{ textAlign: "center" }}>
         <Typography style={{ fontWeight: "bold" }}>{nom}</Typography>
         <br />
-        <Typography>Discipline:</Typography>
-        <Typography>{discipline}</Typography>
+        <Typography>Places restantes:</Typography>
+        <Typography>{placesDispo}</Typography>
       </CardContent>
     </div>
   );
