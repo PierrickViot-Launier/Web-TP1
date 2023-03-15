@@ -152,8 +152,6 @@ function App() {
 
   function addStudent(cours, eleve) {
     let indexCours;
-    let indexEleve;
-
     let dejaPresent = false;
 
     coursH23.map((coursItem, coursIndex) => {

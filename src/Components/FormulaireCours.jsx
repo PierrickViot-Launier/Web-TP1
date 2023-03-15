@@ -47,14 +47,8 @@ export default function FormulaireCours({ addCourse }) {
       setDateDebut("");
 
       setDateFin("");
-    } else if (!nom) {
-      alert("Veuillez saisir le nom du cours");
-    } else if (!discipline) {
-      alert("Veuillez saisir la discipline");
-    } else if (!dateDebut) {
-      alert("Veuillez saisir la date de début");
-    } else if (!dateFin) {
-      alert("Veuillez saisir la date de fin");
+    } else {
+      alert("Veuillez remplir tous les champs");
     }
   }
 

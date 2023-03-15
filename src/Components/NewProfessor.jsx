@@ -50,14 +50,8 @@ export default function NewProfessor({ addProfessor }) {
       setPhoto("");
 
       setDateEmbauche("");
-    } else if (!nom) {
-      alert("Veuillez saisir le nom du professeur");
-    } else if (!prenom) {
-      alert("Veuillez saisir le prenom du professeur");
-    } else if (!dateEmbauche) {
-      alert("Veuillez saisir la date d'embauche");
-    } else if (!photo) {
-      alert("Veuillez choisir une photo");
+    } else {
+      alert("Veuillez remplir tous les champs");
     }
   }
 

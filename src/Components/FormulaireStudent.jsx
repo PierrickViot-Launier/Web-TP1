@@ -2,12 +2,6 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function FormulaireStudent({ nomCours, coursH23, addStudent }) {
-  //   console.log(coursH23);
-
-  //   console.log("nom cours", nomCours);
-
-  //   console.log(nomCours);
-
   const [nom, setNom] = useState("");
 
   const [prenom, setPrenom] = useState("");
@@ -55,13 +49,23 @@ export default function FormulaireStudent({ nomCours, coursH23, addStudent }) {
       DA,
     };
 
-    addStudent(newCours, newEleve);
+    if (nom && prenom && DA) {
+      addStudent(newCours, newEleve);
 
-    navigate(`/CourseDetails/${newCours.nom}`, {
-      state: {
-        cours: newCours,
-      },
-    });
+      setNom("");
+
+      setPrenom("");
+
+      setDA("");
+
+      navigate(`/CourseDetails/${newCours.nom}`, {
+        state: {
+          cours: newCours,
+        },
+      });
+    } else {
+      alert("Veuillez remplir tous les champs");
+    }
   }
 
   return (
