@@ -25,7 +25,7 @@ export default function ProfessorsScreen({ addProfessor, professors }) {
     <div className="body">
       <NewProfessor addProfessor={addProfessor} />
 
-      <h2>Liste des profs</h2>
+      <h2>Liste des professeurs</h2>
 
       {orderedProfessors().map((professor) => (
         <div className="item" key={professor.nom}>

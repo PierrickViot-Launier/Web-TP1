@@ -11,6 +11,8 @@ import {
 import maleTeacher from "../Assets/Images/male_teacher.png";
 import femaleTeacher from "../Assets/Images/female-teacher.png";
 
+import "./ProfessorItem.css";
+
 export default function ProfessorItem({
   nom,
   prenom,
@@ -43,13 +45,13 @@ export default function ProfessorItem({
       />
 
       <CardContent>
-        <Typography>
-          <h4>Cours de l'enseignant:</h4>
+        <Typography variant="h6">Cours de l'enseignant:</Typography>
 
-          {listeCours.map((cours) => (
-            <p key={cours}>{cours}</p>
-          ))}
-        </Typography>
+        {listeCours.map((cours) => (
+          <Typography variant="body1" key={cours}>
+            {cours}
+          </Typography>
+        ))}
       </CardContent>
     </div>
   );
