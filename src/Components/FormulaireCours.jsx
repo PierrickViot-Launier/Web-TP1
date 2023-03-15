@@ -11,6 +11,8 @@ export default function FormulaireCours({ addCourse }) {
 
   const [dateFin, setDateFin] = useState("");
 
+  const eleves = [];
+
   function nomHandler(event) {
     setNom(event.target.value);
   }
@@ -35,6 +37,7 @@ export default function FormulaireCours({ addCourse }) {
       discipline,
       dateDebut,
       dateFin,
+      eleves,
     };
 
     if (nom && discipline && dateDebut && dateFin) {

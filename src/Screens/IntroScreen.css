@@ -1,0 +1,12 @@
+.intro-body {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 200px;
+  margin-right: 200px;
+}
+
+.impro {
+  font-weight: bold;
+}

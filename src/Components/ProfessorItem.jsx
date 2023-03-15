@@ -55,9 +55,5 @@ export default function ProfessorItem({
     </div>
   );
 
-  return (
-    <Card style={{ backgroundColor: "#29cfd5" }} variant="outlined">
-      {card}
-    </Card>
-  );
+  return <Card variant="outlined">{card}</Card>;
 }

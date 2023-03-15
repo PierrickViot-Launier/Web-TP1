@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+import "./FormulaireStudent.css";
+
 export default function FormulaireStudent({ nomCours, coursH23, addStudent }) {
   const [nom, setNom] = useState("");
 
@@ -69,7 +71,7 @@ export default function FormulaireStudent({ nomCours, coursH23, addStudent }) {
   }
 
   return (
-    <React.Fragment>
+    <div className="formEleve">
       <div>
         <h3>Ajouter un élève</h3>
       </div>
@@ -97,6 +99,6 @@ export default function FormulaireStudent({ nomCours, coursH23, addStudent }) {
           <button type="submit">Ajouter</button>
         </div>
       </form>
-    </React.Fragment>
+    </div>
   );
 }

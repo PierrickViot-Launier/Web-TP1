@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+import "./FormulaireProfesseur.css";
+
 export default function FormulaireProfesseur({
   professors,
   addCourseToProfessor,
@@ -77,7 +79,7 @@ export default function FormulaireProfesseur({
     <div>
       <h3>Ajouter un professeur</h3>
 
-      <form onSubmit={addProfessor}>
+      <form className="formProf" onSubmit={addProfessor}>
         <label htmlFor="professeur">Professeurs disponibles</label>
 
         <div>

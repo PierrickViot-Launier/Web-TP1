@@ -31,29 +31,110 @@ function App() {
   }
 
   const coursA21 = [
-    { nom: "Algorithmie et programmation", discipline: "Informatique" },
-    { nom: "Arithmétique et logique", discipline: "Informatique" },
-    { nom: "Outils et profession", discipline: "Informatique" },
-    { nom: "Système d'exploitation Windows", discipline: "Informatique" },
+    {
+      nom: "Algorithmie et programmation",
+      discipline: "Informatique",
+      eleves: [{ nom: "Labrèche", prenom: "Marc", DA: "20175061" }],
+      nomProfesseur: "Leboeuf",
+      prenomProfesseur: "Marcel",
+    },
+    {
+      nom: "Arithmétique et logique",
+      discipline: "Informatique",
+      eleves: [{ nom: "Labrèche", prenom: "Marc", DA: "20175061" }],
+      nomProfesseur: "Leboeuf",
+      prenomProfesseur: "Marcel",
+    },
+    {
+      nom: "Outils et profession",
+      discipline: "Informatique",
+      eleves: [{ nom: "Labrèche", prenom: "Marc", DA: "20175061" }],
+      nomProfesseur: "Leboeuf",
+      prenomProfesseur: "Marcel",
+    },
+    {
+      nom: "Système d'exploitation Windows",
+      discipline: "Informatique",
+      eleves: [{ nom: "Labrèche", prenom: "Marc", DA: "20175061" }],
+      nomProfesseur: "Leboeuf",
+      prenomProfesseur: "Marcel",
+    },
   ];
 
   const coursH22 = [
     {
       nom: "Environnements virtuels et réseau local",
       discipline: "Informatique",
+      eleves: [{ nom: "Labrèche", prenom: "Marc", DA: "20175061" }],
+      nomProfesseur: "Leboeuf",
+      prenomProfesseur: "Marcel",
     },
-    { nom: "Géométrie et statistiques", discipline: "Mathématique" },
-    { nom: "Programmation orientée objet", discipline: "Informatique" },
-    { nom: "Programmation structurée", discipline: "Informatique" },
-    { nom: "Système d'exploitation Linux", discipline: "Informatique" },
+    {
+      nom: "Géométrie et statistiques",
+      discipline: "Mathématique",
+      eleves: [{ nom: "Labrèche", prenom: "Marc", DA: "20175061" }],
+      nomProfesseur: "Leboeuf",
+      prenomProfesseur: "Marcel",
+    },
+    {
+      nom: "Programmation orientée objet",
+      discipline: "Informatique",
+      eleves: [{ nom: "Labrèche", prenom: "Marc", DA: "20175061" }],
+      nomProfesseur: "Leboeuf",
+      prenomProfesseur: "Marcel",
+    },
+    {
+      nom: "Programmation structurée",
+      discipline: "Informatique",
+      eleves: [{ nom: "Labrèche", prenom: "Marc", DA: "20175061" }],
+      nomProfesseur: "Leboeuf",
+      prenomProfesseur: "Marcel",
+    },
+    {
+      nom: "Système d'exploitation Linux",
+      discipline: "Informatique",
+      eleves: [{ nom: "Labrèche", prenom: "Marc", DA: "20175061" }],
+      nomProfesseur: "Leboeuf",
+      prenomProfesseur: "Marcel",
+    },
   ];
 
   const coursA22 = [
-    { nom: "Base de données", discipline: "Informatique" },
-    { nom: "Sécurité et éthique", discipline: "Informatique" },
-    { nom: "Structures de données", discipline: "Informatique" },
-    { nom: "Interface web", discipline: "Informatique" },
-    { nom: "Interface utilisateur", discipline: "Informatique" },
+    {
+      nom: "Base de données",
+      discipline: "Informatique",
+      eleves: [{ nom: "Labrèche", prenom: "Marc", DA: "20175061" }],
+      nomProfesseur: "Leboeuf",
+      prenomProfesseur: "Marcel",
+    },
+    {
+      nom: "Sécurité et éthique",
+      discipline: "Informatique",
+      eleves: [{ nom: "Labrèche", prenom: "Marc", DA: "20175061" }],
+      nomProfesseur: "Leboeuf",
+      prenomProfesseur: "Marcel",
+    },
+    {
+      nom: "Structures de données",
+      discipline: "Informatique",
+      eleves: [{ nom: "Labrèche", prenom: "Marc", DA: "20175061" }],
+      nomProfesseur: "Leboeuf",
+      prenomProfesseur: "Marcel",
+    },
+    {
+      nom: "Interface web",
+      discipline: "Informatique",
+      eleves: [{ nom: "Labrèche", prenom: "Marc", DA: "20175061" }],
+      nomProfesseur: "Leboeuf",
+      prenomProfesseur: "Marcel",
+    },
+    {
+      nom: "Interface utilisateur",
+      discipline: "Informatique",
+      eleves: [{ nom: "Labrèche", prenom: "Marc", DA: "20175061" }],
+      nomProfesseur: "Leboeuf",
+      prenomProfesseur: "Marcel",
+    },
   ];
 
   const [coursH23, setCoursH23] = useState([
