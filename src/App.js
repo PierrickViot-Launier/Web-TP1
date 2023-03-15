@@ -258,8 +258,6 @@ function App() {
 
       const updatedCourses = [...filteredCourses, cours];
 
-      console.log(updatedCourses);
-
       setCoursH23(updatedCourses);
     }
   }
